@@ -1,32 +1,37 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+	<div id="app">
+		<main>
+			<HomePage />
+		</main>
+	</div>
 </template>
 
+<script>
+import HomePage from '@/components/HomePage.vue'
+
+export default {
+	name: 'app',
+	components: {
+		HomePage
+	}
+}
+</script>
+
 <style>
+body {
+	background: linear-gradient(to bottom, #555, #999);
+	background-attachment: fixed;
+}
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+	font-family: 'Avenir', Helvetica, Arial, sans-serif;
 }
 
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+main {
+	margin: 0 auto;
+	padding: 30px;
+	background-color: #fff;
+	width: 1026px;
+	min-height: 300px;
 }
 </style>
