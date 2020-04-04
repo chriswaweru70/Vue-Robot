@@ -6,7 +6,7 @@
 			<span v-if="selectedRobot.head.onSale" class="sale">Sale!</span>
 		</div>
 		<div class="top-row">
-			<div class="top part" :style="headBorderStyle">
+			<div class="top part" :class="{'sale-border' : selectedRobot.head.onSale }">
 				<img :src="selectedRobot.head.src" title="head" />
 				<button @click="selectPreviousHead()" class="prev-selector">&#9668;</button>
 				<button @click="selectNextHead()" class="next-selector">&#9658;</button>
@@ -290,5 +290,8 @@ th {
 }
 .cost {
 	text-align: right;
+}
+.sale-border {
+	border: 3px solid red;
 }
 </style>
