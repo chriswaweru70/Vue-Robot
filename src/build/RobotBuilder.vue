@@ -6,7 +6,7 @@
 			<span v-if="selectedRobot.head.onSale" class="sale">Sale!</span>
 		</div>
 		<div class="top-row">
-			<div class="top part" :class="{'sale-border' : selectedRobot.head.onSale }">
+			<div :class="[saleBorderClass, 'top', 'part' ]">
 				<img :src="selectedRobot.head.src" title="head" />
 				<button @click="selectPreviousHead()" class="prev-selector">&#9668;</button>
 				<button @click="selectNextHead()" class="next-selector">&#9658;</button>
@@ -83,12 +83,8 @@ export default {
 		}
 	},
 	computed: {
-		headBorderStyle() {
-			return {
-				border: this.selectedRobot.head.onSale
-					? '3px solid red'
-					: '3px solid #aaa'
-			}
+		saleBorderClass() {
+			return this.selectedRobot.head.onSale ? 'sale-border' : ' '
 		},
 		selectedRobot() {
 			return {
@@ -175,15 +171,17 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .part {
 	position: relative;
 	width: 165px;
 	height: 165px;
 	border: 3px solid #aaa;
 }
-.part img {
-	width: 165px;
+.part {
+	img {
+		width: 165px;
+	}
 }
 .top-row {
 	display: flex;
