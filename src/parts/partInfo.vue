@@ -3,6 +3,7 @@
 		<h1>{{ part.title }}</h1>
 		<img :src="part.src" alt />
 		<div>{{part.description}}</div>
+		<div>{{part.cost}}</div>
 	</div>
 </template>
 
