@@ -11,6 +11,7 @@ import RobotTorsos from '../parts/RobotTorsos'
 import RobotBases from '../parts/RobotBases'
 import SidebarStandard from '../sidebars/SidebarStandard'
 import SidebarBuild from '../sidebars/SidebarBuild'
+import ShoppingCart from '../cart/ShoppingCart'
 
 Vue.use(VueRouter)
 
@@ -68,6 +69,11 @@ const routes = [
       next(isValidId)
     }
   },
+  {
+    path: '/cart',
+    name: 'Cart',
+    component: ShoppingCart
+  }
 ]
 
 const router = new VueRouter({

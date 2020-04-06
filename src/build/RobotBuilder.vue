@@ -121,7 +121,7 @@ export default {
 				robot.torso.cost +
 				robot.rightArm.cost +
 				robot.base.cost
-			this.cart.push(Object.assign({}, robot, { cost }))
+			this.$store.commit('addRobotToCart', Object.assign({}, robot, { cost }))
 			this.addedToCart = true
 		}
 	}
@@ -235,15 +235,6 @@ export default {
 	width: 210px;
 	padding: 3px;
 	font-size: 16px;
-}
-td,
-th {
-	text-align: left;
-	padding: 5px;
-	padding-right: 20px;
-}
-.cost {
-	text-align: right;
 }
 .sale-border {
 	border: 3px solid red;
