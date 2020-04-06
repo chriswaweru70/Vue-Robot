@@ -14,6 +14,11 @@ export default new Vuex.Store({
   },
   actions: {
   },
+  getters: {
+    cartSaleItems(state) {
+      return state.cart.filter(item => item.head.onSale)
+    }
+  },
   modules: {
   }
 })
