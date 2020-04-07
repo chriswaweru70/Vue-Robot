@@ -128,7 +128,7 @@ export default {
 				robot.rightArm.cost +
 				robot.base.cost
 			this.$store
-				.dispatch('robots/addRobotToCart', Object.assign({}, robot, { cost }))
+				.commit('robots/addRobotToCart', Object.assign({}, robot, { cost }))
 				.then(() => this.$router.push('/cart'))
 			this.addedToCart = true
 		}
