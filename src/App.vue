@@ -47,15 +47,17 @@
 export default {
 	name: 'app',
 	computed: {
-		rootFoo() {
-			return this.$store.state.foo
-		},
-		robotsFoo() {
-			return this.$store.state.robots.foo
-		},
-		usersFoo() {
-			return this.$store.state.users.foo
-		},
+		...mapState({ rootFoo: 'foo', usersFoo: state => state.users.foo }),
+		...mapState('robots', { robotsFoo: 'foo' }), //can only be used when the module is namespaced
+		// rootFoo() {
+		// 	return this.$store.state.foo
+		// },
+		// robotsFoo() {
+		// 	return this.$store.state.robots.foo
+		// },
+		// usersFoo() {
+		// 	return this.$store.state.users.foo
+		// },
 		rootGetterFoo() {
 			return this.$store.getters.foo
 		},
