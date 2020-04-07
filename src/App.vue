@@ -1,6 +1,6 @@
 <template>
 	<div id="app">
-		Root foo: {{ rootFoo }}
+		<!-- Root foo: {{ rootFoo }}
 		<br />
 		Robots foo: {{ robotsFoo }}
 		<br />
@@ -10,7 +10,7 @@
 		Root Getter Foo: {{ rootGetterFoo}}
 		<br />
 
-		Robots Getter Foo: {{ robotsGetterFoo}}
+		Robots Getter Foo: {{ robotsGetterFoo}}-->
 		<header>
 			<nav>
 				<ul>
